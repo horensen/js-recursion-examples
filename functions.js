@@ -32,11 +32,11 @@ function fibonnaci(p) {
 
 /*
  *	Returns the factorial of a number.
- *	n: a number is between 1 and 170
+ *	n: a number between 0 and 170
  */
 function factorial(n) {
 	if (n < 0) {
-		throw new Error('Cannot perform factorial operation on zero or negative number');
+		throw new Error('Cannot perform factorial operation on negative number');
 	} else if (n > 170) {
 		throw new Error('Unable to calculate large factorials beyond 170!');
 	}
