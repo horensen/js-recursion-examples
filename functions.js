@@ -68,7 +68,7 @@ function binarySearch(a, n) {
 		
 		// If the target interger n is found,
 		if (a[mid] === n) {
-			// push it into result.
+			// push this index into result.
 			result.push(mid);
 
 			// Find n in both left and right directions starting from mid position.
