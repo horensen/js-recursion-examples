@@ -1,5 +1,5 @@
 /*
-*	Prints out the seconds left each line until 0.
+*	Prints out the seconds left each line until 0 and finally a given message.
 *	seconds: Initial integer number to start counting down
 *	message: Message to print when seconds is zero
 */
@@ -16,7 +16,7 @@ function countdown(seconds, message) {
 
 /*
 *	Returns a number in the Fibonnaci sequence.
-*	p: a position number between 0 and in the Fibonnaci sequence
+*	p: a position in the Fibonnaci sequence
 */
 function fibonnaci(p) {
 	if (p < 0) {
