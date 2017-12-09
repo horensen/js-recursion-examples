@@ -22,7 +22,7 @@ function countdown(seconds, message) {
  */
 function fibonnaci(p) {
 	if (p < 0) {
-		throw new Error('Cannot perform factorial operation on zero or negative number');
+		throw new Error('Cannot perform factorial operation on negative number');
 	} else if (p > 45) {
 		throw new Error('Unable to determine large number beyond the 45th position');
 	}
