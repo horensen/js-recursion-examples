@@ -1,10 +1,10 @@
 'use strict';
 
 /*
-*	Prints out the seconds left each line until 0 and finally a given message.
-*	seconds: Initial integer number to start counting down
-*	message: Message to print when seconds is zero
-*/
+ *	Prints out the seconds left each line until 0 and finally a given message.
+ *	seconds: Initial integer number to start counting down
+ *	message: Message to print when seconds is zero
+ */
 function countdown(seconds, message) {
 	let i = seconds;
 	let refreshIntervalId = setInterval(function() {
@@ -17,9 +17,9 @@ function countdown(seconds, message) {
 }
 
 /*
-*	Returns a number in the Fibonnaci sequence.
-*	p: a position in the Fibonnaci sequence
-*/
+ *	Returns a number in the Fibonnaci sequence.
+ *	p: a position in the Fibonnaci sequence
+ */
 function fibonnaci(p) {
 	if (p < 0) {
 		throw new Error('Cannot perform factorial operation on zero or negative number');
@@ -31,25 +31,25 @@ function fibonnaci(p) {
 }
 
 /*
-*	Returns the factorial of a number.
-*	n: a number is between 1 and 170
-*/
+ *	Returns the factorial of a number.
+ *	n: a number is between 1 and 170
+ */
 function factorial(n) {
-	if (n <= 0) {
+	if (n < 0) {
 		throw new Error('Cannot perform factorial operation on zero or negative number');
 	} else if (n > 170) {
 		throw new Error('Unable to calculate large factorials beyond 170!');
 	}
 
-	return n === 1 ? n : n * factorial(n - 1);
+	return n === 1 || n === 0 ? 1 : n * factorial(n - 1);
 }
 
 
 /*
-*	Returns an array of indexes of an array a containing the target value n.
-*	a: an array of ascending integers or alphabetically arranged words, but not mixed
-*	n: n is the target value to find in the array
-*/
+ *	Returns an array of indexes of an array a containing the target value n.
+ *	a: an array of ascending integers or alphabetically arranged words, but not mixed
+ *	n: n is the target value to find in the array
+ */
 function binarySearch(a, n) {
 	let result = [];
 
