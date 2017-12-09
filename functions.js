@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 *	Prints out the seconds left each line until 0 and finally a given message.
 *	seconds: Initial integer number to start counting down
