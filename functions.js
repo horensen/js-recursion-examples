@@ -46,7 +46,7 @@ function factorial(n) {
 
 
 /*
-*	Returns an array of indexes of an array a containing the target value n, in O log2 n efficiency.
+*	Returns an array of indexes of an array a containing the target value n.
 *	a: an array of ascending integers or alphabetically arranged words, but not mixed
 *	n: n is the target value to find in the array
 */
