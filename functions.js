@@ -1,6 +1,23 @@
 'use strict';
 
 /*
+ *	Returns the sum of all the numbers in the array.
+ *	numbers: An array containing only numbers.
+ */
+function sum(numbers) {
+	switch (numbers.length) {
+		case 0:
+			return 0;
+			break;
+		case 1:
+			return numbers[0];
+			break;
+	}
+
+	return numbers.shift() + sum(numbers);
+}
+
+/*
  *	Prints out the seconds left each line until 0 and finally a given message.
  *	seconds: Initial integer number to start counting down
  *	message: Message to print when seconds is zero
