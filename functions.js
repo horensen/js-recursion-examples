@@ -125,3 +125,54 @@ function binarySearch(a, n) {
 
 	return result.sort();
 }
+
+
+/*
+ *	Find all the possible combination of numbers that meets the target.
+ *	@param {Array} [numbers] Array of numbers.
+ *	@param {Number} [target] The target integer.
+ *	@param {Boolean} [allowSlightAboveTarget] If true, a subset sum can be minimally above target, else must be equal to target.
+ *	@return {Array} All the subsets, each subset is an Object containing index and subset.
+ */
+function subsetsOfTargetSum(numbers, target, allowSlightAboveTarget) {
+	var originalLengthOfNumbers = numbers.length;
+
+	function findSubsets(numbers, target, subset, indexes) {
+		var total = sum(subset);
+		var canAddToResponse = allowSlightAboveTarget ? (total >= target) : (total === target);
+
+		// If target is met, depending on whether allowed to exceed target slightly,
+		if (canAddToResponse) {
+			// Add this subset into the response along with other useful information.
+			response.push({
+				indexes: indexes.slice(0, indexes.length),
+				subset: subset.slice(0, subset.length),
+				sum: total
+			});	// do not remove slice, else an empty array gets pushed in.
+		}
+
+		// If total did not reach target,
+		if (total < target) {
+			for (var i in numbers) {
+				// Add current number and its index from original array.
+				subset.push(numbers[i]);
+				indexes.push(parseInt(i) + (originalLengthOfNumbers - numbers.length));
+
+				// Take the rest of the numbers to the right.
+				var otherNumbersToTheRight = numbers.slice(parseInt(i) + 1, numbers.length);
+
+				// Continue to find the subset recursively.
+				findSubsets(otherNumbersToTheRight, target, subset, indexes);
+				
+				// Done with findSubsets. Reaching this line means that the subset either
+				// equals or exceeds the target, so pop the last number n and its index i away.
+				subset.pop();
+				indexes.pop();
+			}
+		}
+	}
+
+	var response = [];
+	findSubsets(numbers, target, [], []);
+	return response;
+}
